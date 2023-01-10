@@ -1,0 +1,28 @@
+{
+  "palette": {
+    "primary": {
+      "main": "#545182",
+      "dark": "#471f4a"
+    },
+    "secondary": {
+      "main": "#707070"
+    }
+  },
+  "components": {
+    "MuiCircularProgress": {
+      "styleOverrides": {
+        "root": {
+          "color": "#545182"
+        }
+      }
+    },
+    "MuiButton": {
+      "styleOverrides": {
+        "root": {
+          "backgroundColor": "#672e6b",
+          "color": "white"
+        }
+      }
+    }
+  }
+}

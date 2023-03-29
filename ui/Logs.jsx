@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Link from '@mui/material/Link';
 
 export default function Logs({ logs }) {
   return (
@@ -27,7 +28,7 @@ export default function Logs({ logs }) {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {pk}
+                <Link href={`https://arax.ncats.io/?r=${pk}`} target="_blank" rel="noreferrer">{pk}</Link>
               </TableCell>
               <TableCell align="right">{log.status_code}</TableCell>
               <TableCell align="right">{log.time_elapsed}</TableCell>

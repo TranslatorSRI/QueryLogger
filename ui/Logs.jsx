@@ -19,6 +19,12 @@ export default function Logs({ logs }) {
             <TableCell align="right">Status</TableCell>
             <TableCell align="right">Time Elapsed</TableCell>
             <TableCell align="right">Result Count</TableCell>
+            {Object.values(logs)[0].created_at && (
+              <TableCell align="right">Created At</TableCell>
+            )}
+            {Object.values(logs)[0].updated_at && (
+              <TableCell align="right">Updated At</TableCell>
+            )}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -33,6 +39,12 @@ export default function Logs({ logs }) {
               <TableCell align="right">{log.status_code}</TableCell>
               <TableCell align="right">{log.time_elapsed}</TableCell>
               <TableCell align="right">{log.result_count}</TableCell>
+              {log.created_at && (
+                <TableCell align="right">{log.created_at}</TableCell>
+              )}
+              {log.updated_at && (
+                <TableCell align="right">{log.updated_at}</TableCell>
+              )}
             </TableRow>
           ))}
           {Object.keys(logs).length === 0 && (

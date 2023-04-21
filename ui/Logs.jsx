@@ -19,10 +19,10 @@ export default function Logs({ logs }) {
             <TableCell align="right">Status</TableCell>
             <TableCell align="right">Time Elapsed</TableCell>
             <TableCell align="right">Result Count</TableCell>
-            {Object.values(logs)[0].created_at && (
+            {Object.keys(logs).length > 0 && Object.values(logs)[0].created_at && (
               <TableCell align="right">Created At</TableCell>
             )}
-            {Object.values(logs)[0].updated_at && (
+            {Object.keys(logs).length > 0 && Object.values(logs)[0].updated_at && (
               <TableCell align="right">Updated At</TableCell>
             )}
           </TableRow>

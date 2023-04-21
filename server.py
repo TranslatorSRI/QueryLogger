@@ -7,7 +7,7 @@ import uvicorn
 APP = FastAPI(
   title="ARS Query Logger",
   description="ARS Query Logs for the last 24 hours",
-  version="1.0.1",
+  version="1.0.2",
   translator_teams=["SRI"],
   contact={
       "name": "Max Wang",

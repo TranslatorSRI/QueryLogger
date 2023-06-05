@@ -7,12 +7,12 @@ import uvicorn
 APP = FastAPI(
   title="ARS Query Logger",
   description="ARS Query Logs for the last 24 hours",
-  version="1.0.2",
+  version="1.0.3",
   translator_teams=["SRI"],
   contact={
       "name": "Max Wang",
       "email": "max@covar.com",
-      "x-id": "maxwang",
+      "x-id": "maximusunc",
       "x-role": "responsible developer",
   },
 )
@@ -75,7 +75,11 @@ async def get_aras(ars_url: str):
       for actor in response:
         # loop through all actors and send back all active ones
         if actor["fields"]["active"]:
-          actors.append(actor["fields"]["agent"].split("-", 1)[1])
+          infores = actor["fields"].get("inforesid")
+          if infores:
+            actors.append(infores.split("infores:")[1])
+          else:
+            actors.append(actor["fields"]["agent"].split("-", 1)[1])
   except Exception as e:
     print(e)
   # return only unique inforeses
